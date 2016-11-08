@@ -1,0 +1,38 @@
+netease news.163.com
+|---title //title/text()
+|---div[@class="ns-main"]
+  |---div[@class="ns-mr60"]
+    |---div[@class="ns-wnews mb20"]
+      |---{desc} h3/a
+      |---{href} h3/a/@href
+      response.xpath('div[@class="ns-wnews mb20"]/h3/a/text()')
+      response.xpath('div[@class="ns-wnews mb20"]/h3/a/@href')
+    |---div[@class="ns-wnews mb30"]
+      |---h4
+        |---{desc} h4/a
+        |---{href} h4/a/@href
+        response.xpath('//div[@class="ns-wnews mb30"]/h4/a/text()')
+        response.xpath('//div[@class="ns-wnews mb30"]/h4/a/@href')
+      |---ul
+        |---{desc} ul/li/a
+        |---{href} ul/li/a/@href
+        response.xpath('//div[@class="ns-wnews mb30"]/ul/li/a/text()')
+        response.xpath('//div[@class="ns-wnews mb40"]/ul/li/@href')
+    |---div[@class="ns-wnews mb40"]-------same as "mb30"
+
+    |---div[@class="ns-wnews ns-recommand"]
+      |---h4
+        |---{desc} h4/a
+        |---{href} h4/a/href
+      |---ul
+        |---{desc} ul/li/a
+        |---{href} ul/li/a/@href
+    |---div[@class="ns-wnews mb40 line"]
+      |---h4
+      |---ul
+    |---div[@class="ns-wnews mb30 line"]
+      |---h4
+      |---ul
+
+
+//div[@class="post_text"]/p
